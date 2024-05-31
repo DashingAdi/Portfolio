@@ -1,6 +1,10 @@
 import React from "react";
 import { AuroraBackground } from "@/components/ui/aurora";
 import { motion } from "framer-motion";
+import { FlipWords } from "./ui/flip-words";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+
+const words = ["Slaying server demons" , "Optimizing data fortresses", "Securing data realms", "Safeguarding data sanctuaries"];
 
 const Hero = () => {
   return (
@@ -17,11 +21,13 @@ const Hero = () => {
             }}
             className="relative flex flex-col gap-4 items-center justify-center px-4"
           >
-            <div className="pl-10 pr-10 text-3xl md:text-7xl font-bold dark:text-white text-center">
-              Slaying server demons and optimizing data fortresses.
+            <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+              <FlipWords words={words} />
             </div>
             <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-              Hello I'm Aditya, a Backend Developer based in India.
+              Hello I'm Aditya, a &nbsp;
+              <Highlight className="text-black dark:text-white">Backend Developer</Highlight> 
+              &nbsp; based in India.
             </div>
             
           </motion.div>
